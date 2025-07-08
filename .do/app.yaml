@@ -1,0 +1,16 @@
+name: consistly-ollama
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/consistly
+    branch: main
+  dockerfile_path: Dockerfile
+  instance_count: 1
+  instance_size_slug: basic-s  # Need at least 1GB RAM
+  http_port: 8000
+  envs:
+  - key: OLLAMA_MODEL
+    value: "llama3.1:8b"
+  - key: PORT
+    value: "8000"
